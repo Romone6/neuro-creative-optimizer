@@ -1,0 +1,10 @@
+{
+  "cache_dir": "/Users/romonedunlop/TRIBE V2 MODEL/neuro-creative-optimizer/cache/tribev2",
+  "pretrained_load_ok": true,
+  "pretrained_model_class": "TribeModel",
+  "smoke_test_ok": false,
+  "smoke_test_skip_reason": "Full predict smoke is disabled by default because TRIBE text inference pulls in a heavy transcription path. Set TRIBE_FULL_SMOKE=1 to run it.",
+  "smoke_test_skipped": true,
+  "tribe_import_ok": true,
+  "tribe_repo_dir": "/Users/romonedunlop/TRIBE V2 MODEL/neuro-creative-optimizer/third_party/tribev2"
+}

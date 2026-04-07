@@ -1,0 +1,70 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "neuro-creative-optimizer"
+version = "0.1.0"
+description = "Backend-first foundation for the neuro-informed creative optimization engine."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "anthropic>=0.67.0",
+  "fastapi>=0.115.0",
+  "httpx>=0.28.0",
+  "mne>=1.8.0",
+  "nibabel>=5.2.0",
+  "nilearn>=0.13.0",
+  "openai>=1.99.0",
+  "pydantic>=2.11.0",
+  "pydantic-settings>=2.10.0",
+  "python-multipart>=0.0.20",
+  "uvicorn>=0.35.0",
+  "torch>=2.5.1,<2.7",
+  "numpy==2.2.6",
+  "einops",
+  "pyyaml",
+  "huggingface_hub",
+  "tqdm",
+  "requests",
+  "pydantic",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.4.0",
+  "httpx>=0.28.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = [
+  "packages/agent/src/neuro_agent",
+  "packages/analysis/src/neuro_analysis",
+  "packages/audio/src/neuro_audio",
+  "apps/api/src/neuro_api",
+  "packages/bootstrap/src/neuro_bootstrap",
+  "packages/core/src/neuro_core",
+  "packages/decision/src/neuro_decision",
+  "packages/evaluation/src/neuro_evaluation",
+  "packages/llm/src/neuro_llm",
+  "packages/prompts/src/neuro_prompts",
+  "packages/tribe/src/neuro_tribe",
+  "packages/workbench/src/neuro_workbench",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "packages/agent/src",
+  "packages/analysis/src",
+  "packages/audio/src",
+  "apps/api/src",
+  "packages/bootstrap/src",
+  "packages/core/src",
+  "packages/decision/src",
+  "packages/evaluation/src",
+  "packages/llm/src",
+  "packages/prompts/src",
+  "packages/tribe/src",
+  "packages/workbench/src",
+]
+testpaths = ["tests"]

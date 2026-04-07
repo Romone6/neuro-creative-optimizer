@@ -1,0 +1,13 @@
+{
+  "name": "neuro-creative-optimizer",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.27.0",
+  "scripts": {
+    "test:backend": "uv run pytest",
+    "dev:api": "uv run uvicorn neuro_api.main:app --reload",
+    "dev:web": "pnpm --filter web dev",
+    "build:web": "pnpm --filter web build",
+    "test:web": "pnpm --filter web test"
+  }
+}

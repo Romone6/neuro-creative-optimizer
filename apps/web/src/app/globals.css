@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --background: #07080a;
+  --foreground: #edf2f7;
+  --panel: rgba(10, 14, 19, 0.78);
+  --panel-strong: rgba(9, 12, 17, 0.92);
+  --border: rgba(210, 225, 238, 0.08);
+  --border-strong: rgba(210, 225, 238, 0.16);
+  --muted: rgba(205, 216, 224, 0.68);
+  --muted-strong: rgba(228, 236, 242, 0.88);
+  --accent: #79c9dc;
+  --accent-soft: rgba(121, 201, 220, 0.2);
+  --accent-warm: #d89ea8;
+  --success: #7ed0b1;
+  --danger: #d99191;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    radial-gradient(circle at 20% 18%, rgba(134, 162, 178, 0.16), transparent 26%),
+    radial-gradient(circle at 78% 12%, rgba(160, 138, 147, 0.12), transparent 22%),
+    linear-gradient(180deg, #101318 0%, #08090c 38%, #050608 100%);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plex-sans), sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.signal-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.signal-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(233, 242, 247, 0.1);
+  border-radius: 999px;
+}
+
+.scan-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.glass-panel {
+  background: linear-gradient(180deg, rgba(12, 17, 22, 0.88) 0%, rgba(8, 12, 17, 0.76) 100%);
+  border: 1px solid var(--border);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 20px 60px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(22px);
+}
+
+.signal-label {
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-family: var(--font-plex-mono), monospace;
+}
+
+.brain-glow {
+  box-shadow:
+    0 0 90px rgba(128, 198, 213, 0.18),
+    0 0 160px rgba(212, 155, 167, 0.16);
+}
+
+.brain-pulse {
+  animation: brainPulse 6s ease-in-out infinite;
+}
+
+@keyframes brainPulse {
+  0%,
+  100% {
+    transform: scale(0.995);
+    opacity: 0.92;
+  }
+
+  50% {
+    transform: scale(1.01);
+    opacity: 1;
+  }
+}
+
+.signal-dot {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.3),
+    0 0 28px rgba(121, 201, 220, 0.36);
+}
+
+.operator-composer {
+  background:
+    linear-gradient(180deg, rgba(7, 10, 13, 0.2) 0%, rgba(7, 10, 13, 0.8) 22%, rgba(7, 10, 13, 0.95) 100%);
+}
+
+.brain-visualization {
+  filter: drop-shadow(0 0 40px rgba(121, 201, 220, 0.12));
+}
+
+.brain-visualization circle {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brain-visualization circle:hover {
+  transform-origin: center;
+}

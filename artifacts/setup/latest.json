@@ -1,0 +1,10 @@
+{
+  "mode": "tribe_degraded",
+  "pretrained_load_ok": true,
+  "python_version": "3.12.12",
+  "python_version_ok": true,
+  "smoke_test_ok": false,
+  "tribe_commit": "72399081ed3f1040c4d996cefb2864a4c46f5b8e",
+  "tribe_install_ok": true,
+  "tribe_repo_present": true
+}
